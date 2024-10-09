@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #212121;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: #ff6f3c;
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #005bb5, #0082c8);
+    color: white;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.hero-content h3 {
+    font-size: 1.8rem;
+    color: #f9a826;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background-color: #ff6f3c;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 30px;
+    transition: background 0.3s, transform 0.3s;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #f15a29;
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #fff;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.btn-submit {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Footer Section */
+.footer-bottom {
+    background-color: #212121;
+    padding: 30px 20px;
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+}
+
+.footer-bottom p {
+    margin-bottom: 0;
+}
+
+.footer-bottom a {
+    color: #ff6f3c;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for bounce animation on buttons */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Apply fade-in to hero text */
+.hero-content h1, .hero-content h3, .hero-content p, .btn-primary {
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero-content h1 {
+    animation-delay: 0.3s;
+}
+
+.hero-content h3 {
+    animation-delay: 0.6s;
+}
+
+.hero-content p {
+    animation-delay: 0.9s;
+}
+
+.btn-primary {
+    animation-delay: 1.2s;
+}
+
+/* Add bounce effect to buttons when hovered */
+.btn-primary:hover, .btn-submit:hover {
+    animation: bounce 0.6s ease;
+}
+
+/* Navbar links slide in from right when hovered */
+.nav-links li a {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    transform: translateX(10px);
+}
+
+/* Input fields glow effect */
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Form submit button bounce */
+.btn-submit:hover {
+    animation: bounce 0.6s ease;
+}
+
+
+
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content h3 {
+        font-size: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .btn-primary {
+        font-size: 0.9rem;
+    }
+
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+
+    .contact-section p {
+        font-size: 1rem;
+    }
+}
+</style>
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">Erectsoftsol</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h3>We Are Product Designers</h3>
+            <h1>We Design Interfaces That Users Love</h1>
+            <p>Empowering Businesses to Reach New Heights</p>
+            <a href="#" class="btn-primary">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Feel free to reach out with any questions or project inquiries.</p>
+            <form class="contact-form" id="myForm"
+            action="http://localhost:3000/submit-form"
+            method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="project">Project Details</label>
+                    <textarea id="project" name="project" rows="5" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" ></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn-submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <div class="footer-bottom">
+        <p class="copyright">
+            &copy; 2024 <a href="#" class="copyright-link">Erectsoftsol</a>. All Rights Reserved
+        </p>
+    </div>
+
+
+    <script>
+        //     document.getElementById('myForm').addEventListener('submit', async function (event) {
+        //     event.preventDefault(); // Prevent default form submission
+  
+        //     const formData = new FormData(event.target); // Create a FormData object from the form
+        //     const data = Object.fromEntries(formData.entries()); // Convert FormData to a plain object
+  
+        //     try {
+        //       const response = await fetch('http://localhost:3000/submit-form', { // Correct backend URL
+        //         method: 'POST',
+        //         headers: {
+        //           'Content-Type': 'application/json', // Set the content type to JSON
+        //         },
+        //         body: JSON.stringify(data), // Convert the data object to JSON
+        //       });
+  
+        //       if (!response.ok) {
+        //         throw new Error('Failed to submit form');
+        //       }
+  
+        //       const result = await response.text();
+        //       console.log('Form submitted successfully:', result);
+        //     } catch (error) {
+        //       console.error('Error submitting form:', error);
+        //     }
+        //   });
+  
+        document
+          .getElementById("myForm")
+          .addEventListener("submit", async function (event) {
+            event.preventDefault(); // Prevent the form from reloading the page
+  
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries()); // Convert FormData to an object
+  
+            try {
+              const response = await fetch("http://localhost:3000/submit-form", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data), // Convert the data object to JSON
+              });
+  
+              if (!response.ok) {
+                throw new Error("Failed to submit form");
+              }
+  
+              const result = await response.text();
+              console.log("Form submitted successfully:", result);
+              alert("Form submitted successfully!"); // Show success alert
+            } catch (error) {
+              console.error("Error submitting form:", error);
+              alert("Failed to submit the form.");
+            }
+          });
+      </script>    
+
+</body>
+</html>
