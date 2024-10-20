@@ -256,6 +256,7 @@ size: 10px;
   position: fixed;
   background-color: var(--white);
   box-shadow: 0 2px 30px hsla(0, 0%, 0%, 0.1);
+  
 }
 
 .header .container {
@@ -279,6 +280,7 @@ size: 10px;
 }
 
 .navbar {
+  
   background-color: var(--white);
   position: fixed;
   top: 0;
@@ -1139,19 +1141,23 @@ background-color: rgb(253, 253, 253);
     display: block;
     color: #fff;
     text-decoration: none;
-    background-color: #444;
+    background-color: #6e6b6b;
     transition: background-color 0.3s ease;
+    box-shadow: 10px 10px 5px rgba(245, 41, 41, 0.76), -10px -10px 10px rgba(101, 101, 235, 0.925);
 }
 
 .dropdown-content a:hover {
-    background-color: #f39c12;
+    /* background-color: #f39c12; */
+    box-shadow: 10px 10px 5px rgba(223, 71, 71, 0.76), -10px -10px 10px rgba(67, 67, 218, 0.3);
 }
 
 /* Show dropdown on hover with animation */
 .dropdown:hover .dropdown-content {
+  box-shadow: inset 5px 5px 10px rgb(255, 79, 79);
     display: block;
     opacity: 1;
     transform: translateY(0);
+    box-shadow: inset 5px 5px 10px rgb(233, 47, 47);
 }
 
 /* Add animations for smoother dropdown opening */
@@ -1172,11 +1178,13 @@ background-color: rgb(253, 253, 253);
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s ease;
+    
 }
 
 .navbar a:hover::after, .dropdown .dropbtn:hover::after {
     transform: scaleX(1);
     transform-origin: left;
+    box-shadow: inset 5px 5px 10px rgb(241, 55, 55);
 }
 
 /* Mobile responsive styling */
