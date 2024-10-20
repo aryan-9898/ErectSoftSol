@@ -449,7 +449,7 @@
           </li>
 
           <li>
-            <a href="#" class="footer-link">Team</a>
+            <a href="try.html" class="footer-link">Contact us</a>
           </li>
 
 
@@ -466,19 +466,19 @@
           </li>
 
           <li>
-            <a href="#" class="footer-link">Web Development</a>
+            <a href="web.html" class="footer-link">Web Development</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Web Solution</a>
+            <a href="app.html" class="footer-link">App Development</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Digital Marketing</a>
+            <a href="ui.html" class="footer-link">UI/UX design</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">App Design</a>
+            <a href="ecom.html" class="footer-link">E-commerce Website</a>
           </li>
 
         </ul>
@@ -486,19 +486,20 @@
         <ul class="footer-list">
 
           <li>
-            <p class="footer-list-title">Other links</p>
+            <p class="footer-list-title">Career</p>
           </li>
 
           <li>
-            <a href="#" class="footer-link">FAQ</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScDF_L9j3tsAAQrVeN-I5R80lADq6yYJZPIhQdlqGrvKcfrwA/viewform?usp=pp_url" class="footer-link">Internship</a>
           </li>
+          <li>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScD0EXQfqWHKhate-3EVGpNbcFAPXo7QLXOzsj1yw22RE5tmA/viewform?usp=pp_url" class="footer-link">full time</a>
+          </li>
+          
+
 
           <li>
-            <a href="#" class="footer-link">Portfolio</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Privacy Policy</a>
+            <p class="footer-list-title">other link</p>
           </li>
 
           <li>
@@ -617,7 +618,7 @@
       const data = Object.fromEntries(formData.entries()); // Convert FormData to a plain object
       
       try {
-        const response = await fetch('https://erectsoftsol.onrender.com/try.html', { // Correct backend URL
+        const response = await fetch('http://localhost:3000/submit-form', { // Correct backend URL
           method: 'POST',
           headers: {
             'Content-Type': 'application/json', // Set the content type to JSON
