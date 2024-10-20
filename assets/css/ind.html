@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  position: relative;
+  z-index: 1000;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar-list {
+  display: flex;
+  list-style-type: none;
+}
+
+.navbar-item {
+  position: relative;
+  margin-left: 20px;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 16px;
+  display: block;
+}
+
+.navbar-link:hover {
+  background-color: #858282;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #70cae6;
+  min-width: 160px;
+  z-index: 100;
+  padding: 0;
+}
+
+.dropdown-menu a {
+    box-shadow: 10px 10px 5px rgba(146, 140, 140, 0.76), -10px -10px 10px rgba(110, 110, 230, 0.3);
+  color: white;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #555;
+  box-shadow: inset 5px 5px 10px rgb(59, 58, 58);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Responsive Styles */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+  /* Hide the navbar and show hamburger on mobile */
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .navbar.open {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    box-shadow: 10px 10px 5px rgba(2, 2, 2, 0.76), -10px -10px 10px rgba(0, 0, 255, 0.3);
+    
+  }
+
+  .navbar-list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-item {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .navbar-link {
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: 200px;
+  }
+
+  /* Dropdowns in mobile */
+  .dropdown-menu {
+    position: relative;
+    top: 0;
+  }
+  
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .logo {
+    margin-left: 10px;
+  }
+}
+</style>
+<body>
+  <header class="header">
+    <div class="container">
+      <!-- Logo -->
+      <a href="#" class="logo">MyWebsite</a>
+
+      <!-- Hamburger icon (shown on mobile) -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Navigation menu -->
+      <nav class="navbar" id="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item"><a href="#home" class="navbar-link">Home</a></li>
+          <li class="navbar-item dropdown">
+            <a href="#" class="navbar-link dropdown-toggle">Services</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">App Development</a></li>
+              <li><a href="#">UI/UX Design</a></li>
+            </ul>
+          </li>
+          <li class="navbar-item dropdown">
+            <a href="#" class="navbar-link dropdown-toggle">Career</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Internship</a></li>
+              <li><a href="#">Full Time</a></li>
+            </ul>
+          </li>
+          <li class="navbar-item"><a href="#contact" class="navbar-link">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+
+
+  
+  <script>
+    // Toggle navbar when hamburger is clicked
+    const hamburger = document.getElementById('hamburger');
+    const navbar = document.getElementById('navbar');
+
+    hamburger.addEventListener('click', function () {
+      navbar.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
