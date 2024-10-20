@@ -172,11 +172,25 @@ size: 10px;
   background-image: var(--gradient-2);
   background-size: 200%;
   color: var(--white);
-  padding: 12px 35px;
+  padding: 12px;
+  /* margin: 200px; */
   font-size: var(--fs-8);
   font-weight: var(--fw-500);
-  border-radius: 0 25px;
+  border-radius: 0 15px;
   transition: var(--transition-2);
+}
+.con{
+  background-color: #ee5919;
+  
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    /* background-color: #007BFF; */
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+
 }
 
 .btn:is(:hover, :focus) { background-position: right; }
