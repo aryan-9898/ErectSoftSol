@@ -453,42 +453,29 @@
         body: JSON.stringify(data), // Convert the data object to JSON
       });
 
-      // Log the full response for debugging
-      console.log("Response received:", response);
+      // If response is successful (status 200)
+      if (response.ok) {
+        const result = await response.text(); // Get the result as text
+        console.log("Form submitted successfully:", result);
 
-      // Check if the response is not OK (non 2xx), but don't throw an error immediately
-      if (!response.ok) {
-        const errorMessage = `Server returned status: ${response.status} ${response.statusText}`;
-        console.warn(errorMessage);
-
-        // Check the response body for details (if the server sends any)
-        const result = await response.text();
-        console.warn("Response body:", result);
-
-        // Show the popup even if the status is not 2xx, but data was stored
+        // Show success popup
         document.getElementById("popup").style.display = "block";
         setTimeout(() => {
           document.getElementById("popup").style.display = "none";
         }, 3000);
-
-        // Optionally handle specific status codes differently if needed
-        return;
+      } else {
+        // In case of non-2xx responses, show an alert
+        console.error("Form submission failed:", response.status, response.statusText);
+        alert("Failed to submit the form. Please try again.");
       }
-
-      // Handle successful response
-      const result = await response.text();
-      console.log("Form submitted successfully:", result);
-
-      // Show success popup
-      document.getElementById("popup").style.display = "block";
-      setTimeout(() => {
-        document.getElementById("popup").style.display = "none";
-      }, 3000);
     } catch (error) {
+      // Catch any other errors (network issues, etc.)
       console.error("Error submitting form:", error);
-      alert("Failed to submit the form.");
+      alert("An error occurred while submitting the form.");
     }
   });
+
+
 
 
 
