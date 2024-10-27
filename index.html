@@ -39,9 +39,8 @@
       <div class="overlay" data-overlay></div>
 
       <a href="#">
-        <h1 class="logo">Erectsoftsol
-        </h1>
-        
+        <h1 class="logo">Erectsoftsol</h1>
+      
       </a>
 
       <nav class="navbar" data-navbar>
@@ -216,7 +215,7 @@
                   <ion-icon name="phone-portrait-outline"></ion-icon>
                 </div>
 
-                <h3 class="h3 title">App development</h3>
+                <a href="app.html" class="click 0">App Development</a>
 
                 <p class="text">
                   The App is more a social creation than a technical one. We designed it for a social effect—to help people work together—and not as a technical toy.
@@ -236,7 +235,8 @@
                   <ion-icon name="desktop-outline"></ion-icon>
                 </div>
 
-                <h3 class="h3 title">Web Development</h3>
+                
+                <a href="web.html" class="click 0">Web Development</a>
 
                 <p class="text">
                   The Web is more a social creation than a technical one. We designed it for a social effect—to help people work together—and not as a technical toy.
@@ -256,10 +256,11 @@
                   <ion-icon name="globe-outline"></ion-icon>
                 </div>
 
-                <h3 class="h3 title">Cloud Networking</h3>
+    
+                <a href="ui.html" class="click 0">UI/UX</a>
                 
                 <p class="text">
-                  The Cloud Networking is more a social creation than a technical one. We designed it for a social effect—to help people work together—and not as a technical work.
+                  Our UI/UX content team specializes in developing concise, clear copy for apps, websites, and digital products, all designed to facilitate easy navigation and create a user-friendly experience."
                 </p>
 
                 <button class="card-btn" aria-label="Show More">
@@ -359,7 +360,7 @@
                 </div>
 
                 <div class="content">
-                  <h3 class="h3 title">Testing & Lunching</h3>
+                  <h3 class="h3 title">Testing & Launching</h3>
 
                   <p class="text">
                     firstly test the techonology and then launch the techonology.
@@ -402,27 +403,27 @@
           <a href="#" class="logo">Erectsoftsol</a>
 
           <p class="text">
-            IT service company.
-            uttar pardesh, meerut (250001).
+            IT Service Company.
+            Uttar Pradesh, Meerut (250001).
           </p>
 
           <ul class="social-list">
 
             <li>
-              <a href="#" class="social-link">
+              <a href="" class="social-link">
                 <ion-icon name="logo-facebook"></ion-icon>
               </a>
             </li>
 
             <li>
-              <a href="#" class="social-link">
+              <a href="https://www.instagram.com/erectsoftsol?igsh=MWpyYW93Z2FqZzlrbQ==" class="social-link">
                 <ion-icon name="logo-instagram"></ion-icon>
               </a>
             </li>
 
             <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
+              <a href="https://www.linkedin.com/in/abhishek-v-14840623a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
               </a>
             </li>
 
@@ -493,13 +494,13 @@
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScDF_L9j3tsAAQrVeN-I5R80lADq6yYJZPIhQdlqGrvKcfrwA/viewform?usp=pp_url" class="footer-link">Internship</a>
           </li>
           <li>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScD0EXQfqWHKhate-3EVGpNbcFAPXo7QLXOzsj1yw22RE5tmA/viewform?usp=pp_url" class="footer-link">full time</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScD0EXQfqWHKhate-3EVGpNbcFAPXo7QLXOzsj1yw22RE5tmA/viewform?usp=pp_url" class="footer-link">Full time</a>
           </li>
           
 
 
           <li>
-            <p class="footer-list-title">other link</p>
+            <p class="footer-list-title">Other link</p>
           </li>
 
           <li>
@@ -551,7 +552,7 @@
             </div>
 
             <address class="footer-item-link">
-              Meerut, Uttar Pardesh.
+              Meerut, Uttar Pradesh.
             </address>
 
           </li>
@@ -582,6 +583,62 @@
   </a>
 
 
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script>
+      // document.getElementById('myForm').addEventListener('submit', async function (event) {
+      //   event.preventDefault();
+      //   const formData = new FormData(event.target);
+    
+      //   const data = Object.fromEntries(formData);
+    
+      //   try {
+      //     const response = await fetch('http://localhost:3000/submit-form', {
+      //       method: 'POST',
+      //       headers: {
+      //         'Content-Type': 'application/json',
+      //       },
+      //       body: JSON.stringify(data),
+      //     });
+    
+      //     const result = await response.text();
+      //     console.log(result);
+      //   } catch (error) {
+      //     console.error('Error submitting form:', error);
+      //   }
+      // });
+
+      document.getElementById('myForm').addEventListener('submit', async function (event) {
+      event.preventDefault(); // Prevent default form submission
+      
+      const formData = new FormData(event.target); // Create a FormData object from the form
+      const data = Object.fromEntries(formData.entries()); // Convert FormData to a plain object
+      
+      try {
+        const response = await fetch('http://localhost:3000/submit-form', { // Correct backend URL
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json', // Set the content type to JSON
+          },
+          body: JSON.stringify(data), // Convert the data object to JSON
+        });
+        
+        if (!response.ok) {
+          throw new Error('Failed to submit form');
+        }
+
+        const result = await response.text();
+        console.log('Form submitted successfully:', result);
+      } catch (error) {
+        console.error('Error submitting form:', error);
+      }
+    });
+
+  </script>
   <script src="./assets/js/script.js"></script>
 
   <!-- 
