@@ -279,8 +279,15 @@ size: 10px;
   align-items: center;
   gap: 30px;
 }
+.click {
+  align-items: center;
+  font-size: 30px;
+  text-align: center;
+  color: rgb(8, 8, 143);
+}
 
 .logo {
+margin-left: -10px;
   color: var(--color);
   font-family: var(--ff-source-sans-pro);
   font-size: var(--fs-3);
@@ -340,6 +347,7 @@ size: 10px;
   font-size: var(--fs-8);
   font-weight: var(--fw-600);
   padding-block: 12px;
+ 
 }
 
 .overlay {
@@ -851,6 +859,8 @@ background-color: rgb(253, 253, 253);
 
 
 
+
+
   /**
    * FOOTER
    */
@@ -1137,11 +1147,11 @@ background-color: rgb(253, 253, 253);
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #444;
+    /* background-color: #444; */
     top: 100%;
     left: 0;
     min-width: 200px;
-    box-shadow: 0 10px 20px rgba(190, 179, 179, 0.822);
+    /* box-shadow: 0 10px 20px rgba(190, 179, 179, 0.822); */
     z-index: 1;
     opacity: 0;
     transform: translateY(20px);
@@ -1155,23 +1165,23 @@ background-color: rgb(253, 253, 253);
     display: block;
     color: #fff;
     text-decoration: none;
-    background-color: #6e6b6b;
+    /* background-color: #6e6b6b; */
     transition: background-color 0.3s ease;
-    box-shadow: 10px 10px 5px rgba(245, 41, 41, 0.76), -10px -10px 10px rgba(101, 101, 235, 0.925);
+    /* box-shadow: 10px 10px 5px rgba(245, 41, 41, 0.76), -10px -10px 10px rgba(101, 101, 235, 0.925); */
 }
 
 .dropdown-content a:hover {
     /* background-color: #f39c12; */
-    box-shadow: 10px 10px 5px rgba(223, 71, 71, 0.76), -10px -10px 10px rgba(67, 67, 218, 0.3);
+    /* box-shadow: 10px 10px 5px rgba(223, 71, 71, 0.76), -10px -10px 10px rgba(67, 67, 218, 0.3); */
 }
 
 /* Show dropdown on hover with animation */
 .dropdown:hover .dropdown-content {
-  box-shadow: inset 5px 5px 10px rgb(255, 79, 79);
+  /* box-shadow: inset 5px 5px 10px rgb(255, 79, 79); */
     display: block;
     opacity: 1;
     transform: translateY(0);
-    box-shadow: inset 5px 5px 10px rgb(233, 47, 47);
+    /* box-shadow: inset 5px 5px 10px rgb(233, 47, 47); */
 }
 
 /* Add animations for smoother dropdown opening */
@@ -1222,4 +1232,6 @@ background-color: rgb(253, 253, 253);
   margin-right: 400px;
 } */
 
-
+.click {
+ align-items: center; 
+}
